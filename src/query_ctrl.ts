@@ -39,7 +39,7 @@ export class AppDynamicsQueryCtrl extends QueryCtrl {
     parseTarget() {
 
         this.metricSegments = [];
-        this.target.transformLegendText = '1';
+        this.target.transformLegendText = this.target.transformLegendText || '1';
 
         this.applicationSegment = this.uiSegmentSrv.newSegment(this.target.application || 'Application');
 

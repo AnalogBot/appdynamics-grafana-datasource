@@ -52,7 +52,7 @@ var AppDynamicsQueryCtrl = /** @class */ (function (_super) {
     AppDynamicsQueryCtrl.prototype.parseTarget = function () {
         var _this = this;
         this.metricSegments = [];
-        this.target.transformLegendText = '1';
+        this.target.transformLegendText = this.target.transformLegendText || '1';
         this.applicationSegment = this.uiSegmentSrv.newSegment(this.target.application || 'Application');
         if (this.target.metric) {
             this.target.metric.split('|').forEach(function (element, index, arr) {
