@@ -87,6 +87,9 @@ var AppDynamicsSDK = /** @class */ (function () {
                             }
                         }
                         break;
+                    case 'Custom':
+                        legend += target.transformLegendText;
+                        break;
                     default:
                         legend += metricElement.metricPath;
                 }

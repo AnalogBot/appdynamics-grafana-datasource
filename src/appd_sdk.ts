@@ -102,6 +102,10 @@ export class AppDynamicsSDK {
                         }
                         break;
 
+                    case 'Custom':
+                        legend += target.transformLegendText;
+                        break;
+
                     default:
                         legend += metricElement.metricPath;
                 }
@@ -269,7 +273,7 @@ export class AppDynamicsSDK {
             type = values[values.length - 1];
             appName = this.templateSrv.replace(values[0]);
 
-            if (values.length >= 3) {      
+            if (values.length >= 3) {
                 tierName = this.templateSrv.replace(values[1]);
             }
             if (values.length >= 4) {
@@ -398,7 +402,7 @@ export class AppDynamicsSDK {
             }else {
                 return element.tierName.toLowerCase() === tierName.toLowerCase();
             }
-            
+
         });
 
         arr.forEach(element => {

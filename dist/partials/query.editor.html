@@ -17,13 +17,20 @@
       <div class="gf-form">
         <div class="gf-form-select-wrapper">
           <select class="gf-form-input query-keyword" ng-model="ctrl.target.transformLegend" ng-init="ctrl.target.transformLegend = ctrl.target.transformLegend || 'Full Path'"
-            ng-options="t for t in ['Full Path', 'Segments']" ng-change="ctrl.onChangeInternal()">
+            ng-options="t for t in ['Full Path', 'Segments', 'Custom']" ng-change="ctrl.onChangeInternal()">
           </select>
         </div>
       </div>
       <div class="gf-form">
-        <div class="gf-form" ng-if="ctrl.target.transformLegend != 'Full Path'">
+        <div class="gf-form" ng-if="ctrl.target.transformLegend == 'Segments'">
           <input type="text" class="gf-form-input" ng-model="ctrl.target.transformLegendText" spellcheck='false' bs-tooltip="'Specify the segments of the Metric Path that you want to display on the legend, example: 1,3'"
+            match-all="true" min-length="1" data-min-length=0 data-items=100 ng-blur="ctrl.onChangeInternal()">
+          </input>
+        </div>
+      </div>
+      <div class="gf-form">
+        <div class="gf-form" ng-if="ctrl.target.transformLegend == 'Custom'">
+          <input type="text" class="gf-form-input" ng-model="ctrl.target.transformLegendText" spellcheck='false' bs-tooltip="'Specify the custom legend'"
             match-all="true" min-length="1" data-min-length=0 data-items=100 ng-blur="ctrl.onChangeInternal()">
           </input>
         </div>
